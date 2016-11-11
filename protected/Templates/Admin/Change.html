@@ -1,0 +1,25 @@
+{% extends 'Index.html' %}
+
+{% block content %}
+<form action="/admin/save" method="post">
+    <p>
+        Название:
+        <input type="text" name="book[name]" value="{{book.name}}">
+    </p>
+    <p>
+        Описание:
+        <input type="text" name="book[description]" value="{{book.description}}">
+    </p>
+    <p>
+        Фрагмент:
+        <input type="text" name="book[fragment]" value="{{book.fragment}}">
+    </p>
+    <p>
+        Год:
+        <input type="text" name="book[year]" value="{{book.year}}">
+    </p>
+    <input type="hidden" value="{{book.__id}}"  name="book[id]">
+    <input type="submit" value="Изменить">
+</form>
+
+{% endblock %}

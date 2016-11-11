@@ -1,0 +1,27 @@
+{% extends 'Index.html' %}
+
+{% block content %}
+<table border="1px dotted black">
+    <tr>
+        <th>Название</th>
+        <th>Описание</th>
+        <th>Год</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{book.name}}</td>
+        <td>{{book.description}}</td>
+        <td>{{book.year}}</td>
+        <td>
+            <a href="/admin/change?id={{book.__id}}">Изменить</a></td>
+        <td>
+            <a href="/admin/delete?id={{book.__id}}">Удалить</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/admin/add/">Добавить книгу</a>
+{% endblock %}
