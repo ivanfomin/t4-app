@@ -1,7 +1,7 @@
 {% extends 'Index.html' %}
 
 {% block content %}
-<form action="/admin/save" method="post">
+<form action="/admin/update" method="post">
     <p>
         Название:
         <input type="text" name="book[name]" value="{{book.name}}">

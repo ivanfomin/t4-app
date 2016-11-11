@@ -29,6 +29,19 @@ class Admin extends Controller
 
     }
 
+    public function actionUpdate(Book $book)
+    {
+        //$book->save() в данном случае создает новую запись
+
+        $updateBook = Book::findByPK($book['id']);
+        if (!empty($updateBook)) {
+            foreach ($book as $item => $value) {
+                $updateBook[$item] = $value;
+            }
+        }
+        $updateBook->save();
+        $this->redirect(':' . $this->app->request->url->port . '/admin/');
+    }
 
     public function actionSave(Book $book)
     {
