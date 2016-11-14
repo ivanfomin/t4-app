@@ -13,7 +13,6 @@ class m_1478867406_createBooks
         $this->createTable('books', [
             'name' => ['type' => 'string'],
             'description' => ['type' => 'text'],
-            'fragment' => ['type' => 'text'],
             'year' => ['type' => 'int'],
         ]);
     }
