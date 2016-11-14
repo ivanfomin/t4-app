@@ -1,7 +1,7 @@
 {% extends 'Index.html' %}
 
 {% block content %}
-{{fragment}}
+{{book.fragment.content | default('Нет содержимого!')}}
 <br>
 <a href=" /">На главную</a>
 {% endblock %}

@@ -20,8 +20,10 @@ class Book extends Model
         'columns' => [
             'name' => ['type' => 'string'],
             'description' => ['type' => 'text'],
-            'fragment' => ['type' => 'text'],
             'year' => ['type' => 'int'],
+        ],
+        'relations' => [
+            'fragment' => ['type' => self::BELONGS_TO, 'model' => Fragment::class]
         ]
     ];
 

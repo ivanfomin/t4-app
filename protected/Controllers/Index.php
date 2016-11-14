@@ -12,6 +12,7 @@ class Index extends Controller
     {
         $this->app->assets->publishCssFile('/Layouts/style.css');
         $this->data->books = Book::findAll();
+
     }
 
     public function actionPage($id)
@@ -19,9 +20,8 @@ class Index extends Controller
         $book = Book::findByPK($id);
 
         if (!empty($book)) {
-            $this->data->fragment = $book['fragment'];
+            $this->data->book = $book;
         }
-        //$this->redirect(':' .  $this->app->request->url->port . '/index/');
     }
 
 }
